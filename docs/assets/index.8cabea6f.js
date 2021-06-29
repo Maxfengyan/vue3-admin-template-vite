@@ -1,1 +1,0 @@
-import{p as s,b as a,o as e,c as o,a as d,w as c}from"./vendor.08da2969.js";const t={setup:()=>({welcome:"./assets/welcome.5b31ba33.png"})},r=c();s("data-v-5140d322");const l={class:"dashboard"};a();const n=r(((s,a,c,t,r,n)=>(e(),o("div",l,[d("img",{src:t.welcome},null,8,["src"])]))));t.render=n,t.__scopeId="data-v-5140d322";export default t;
