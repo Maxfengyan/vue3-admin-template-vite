@@ -183,7 +183,7 @@ export const asyncRoutes = [
     component: () => import("@/views/404/index.vue"),
     children: [
       {
-        path: "http://www.baidu.com",
+        path: "https://github.com/Maxfengyan/vue3-admin-template-vite",
         meta: {
           title: "外链",
           icon: "link",
