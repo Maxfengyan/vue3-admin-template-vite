@@ -59,6 +59,7 @@ class Axios {
 
   // 处理.json后缀
   handleJsonSuffix(url) {
+    return url;
     // 不排除真的有请求.json的情况，偷懒嫌疑
     if (!import.meta.env.DEV && url.indexOf(".json") !== -1) {
       return url.replace(".json", "");

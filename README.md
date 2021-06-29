@@ -2,16 +2,16 @@
 
 > 一款 vue3 开箱即用的纯净的后台管理系统，只包含ui/权限/axios封装/svg等
 
-[线上地址](http://)
+[线上地址](http://https://maxfengyan.github.io/vue3-admin-template-vite/#/)
 #### 在 pan 大佬的<a href=https://github.com/PanJiaChen/vue-admin-template>vue-admin-template</a>项目基础上进行微改的 vue3 版本,基本沿用 vue-admin-template 项目构造，添加了一些更贴合项目的改动。如果有使用过vue-admin-template或者vue-element-admin的同学，无缝切换。没使用过的话可以当作vue3的入门练习。
 
 #### 技术栈：vue3.x + vite2.x + element-plus + vue-router4.x + vuex4.x
 
 #### Build Setup
 
-```
-git clone
-cd
+```bash
+git clone https://github.com/Maxfengyan/vue3-admin-template-vite.git
+cd vue3-admin-template-vite
 npm install
 npm run dev
 ```
