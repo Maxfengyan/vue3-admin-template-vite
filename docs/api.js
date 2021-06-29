@@ -3,6 +3,6 @@
     epgms:
       "./epgms",
     others:
-      "./others",
+      "./other",
   };
 })();
