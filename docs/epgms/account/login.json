@@ -1,0 +1,11 @@
+{
+  "resultCode": "0",
+  "resultMessage": "登录成功",
+  "data": {
+    "userName": "admin",
+    "avator": "",
+    "token": "xxxxxxxxxxxxxxxxxxxxxxxx",
+    "role": "admin",
+    "userAccount": "mafengyan"
+  }
+}
