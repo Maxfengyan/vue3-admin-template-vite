@@ -1,12 +1,13 @@
-### vue3-element-vite-template
+## vue3-element-vite-template
 
-#### 一款 vue3 开箱即用的后台管理系统
+> 一款 vue3 开箱即用的纯净的后台管理系统，只包含ui/权限/axios封装/svg等
 
-##### 在 pan 大佬的<a href=https://github.com/PanJiaChen/vue-admin-template>vue-admin-template</a>项目基础上进行微改的 vue3 版本,基本沿用 vue-admin-template 项目构造，添加了一些更贴合项目的改动。如果有使用过vue-admin-template或者vue-element-admin，基本瞬间上手。没使用过的话可以当作vue3的入门练习。
+[线上地址](http://)
+#### 在 pan 大佬的<a href=https://github.com/PanJiaChen/vue-admin-template>vue-admin-template</a>项目基础上进行微改的 vue3 版本,基本沿用 vue-admin-template 项目构造，添加了一些更贴合项目的改动。如果有使用过vue-admin-template或者vue-element-admin的同学，无缝切换。没使用过的话可以当作vue3的入门练习。
 
-##### 技术栈：vue3.x + vite2.x + element-plus + vue-router4.x + vuex4.x
+#### 技术栈：vue3.x + vite2.x + element-plus + vue-router4.x + vuex4.x
 
-##### Build Setup
+#### Build Setup
 
 ```
 git clone
@@ -15,9 +16,9 @@ npm install
 npm run dev
 ```
 
-##### 相对于 <a href=https://github.com/PanJiaChen/vue-admin-template>vue-admin-template</a> 改动
+#### 相对于 <a href=https://github.com/PanJiaChen/vue-admin-template>vue-admin-template</a> 改动
 
-1. **Vite**:使用 vite 构建工具，放弃 webpack。
+1. **Vite**:使用 vite 构建工具，放弃 webpack。(vite真香)
 
 2. **Axios 封装请求**：
 
@@ -34,11 +35,6 @@ npm run dev
 
 4. **Sidebar**:剔除了侧边栏适配 mobile 的响应式(懒...)，调整代码逻辑，在.env 文件中设置 系统标题(VITE_SYSTEM_SWITCH/VITE_SYSTEM_NAME)/系统logo(VITE_SYSTEM_LOGO)
 
-  <figure align=center>
-  	<img src=".\markpic\logo1.png">
-      <img src=".\markpic\logo2.png">
-  </figure>
-
 5.**svg**：下载svg文件存放于*src/plugin/icons/svg/*下，使用方式:
 
 ```html
@@ -47,14 +43,13 @@ npm run dev
 ```
 
 6.**mockJs**:因为本地开发时使用 **mockJs** 无法在浏览器捕捉到响应信息，故放弃，可采用以下两种方法：
-
-  (1) <a href="https://github.com/easy-mock/easy-mock">easy-mock</a>(推荐):服务器搭建 easy-mock 服务进行接口管理，前后端开发方便协作规范。
-
-  (2) public:vite 项目 public 文件夹下文件会自动变为静态资源服务，可以在 public 文件夹下根据接口规范创建相应路径的 json 文件达到 ajax 请求目的。
+   (1) <a href="https://github.com/easy-mock/easy-mock">easy-mock</a>(推荐):服务器搭建 easy-mock 服务进行接口管理，前后端开发方便协作规范。
+    
+   (2) public:vite 项目 public 文件夹下文件会自动变为静态资源服务，可以在 public 文件夹下根据接口规范创建相应路径的 json 文件达到 ajax 请求目的。
 
   注：如果需要前后端联调接口需要在vite.config.js配置proxy
 
-##### 目录结构
+#### 目录结构
 
 ```
 |- public                                // 公共静态资源以及模拟接口json文件
