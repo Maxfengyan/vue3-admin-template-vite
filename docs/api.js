@@ -1,8 +1,8 @@
 (function () {
   window.api = {
     epgms:
-      "/epgms",
+      "./epgms",
     others:
-      "/others",
+      "./others",
   };
 })();

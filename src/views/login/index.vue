@@ -52,7 +52,7 @@ export default {
       // backgroundColor: this.bgColor,
       passwordStatus: true,
       version: import.meta.env.VITE_VERSION,
-      systemName: import.meta.env.VITE_SYSTEM_NAME
+      systemName: import.meta.env.VITE_SYSTEM_NAME,
       loading: false,
       switchText: "password",
       switchIcon: "eye",
