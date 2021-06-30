@@ -7,7 +7,7 @@
       class="login-form"
       label-width="80px"
     >
-      <h2 class="login-title">EPG模板管理系统</h2>
+      <h2 class="login-title">{{ systemName }}</h2>
       <el-form-item prop="account">
         <i class="login-user el-icon-user-solid"></i>
         <el-input
@@ -52,6 +52,7 @@ export default {
       // backgroundColor: this.bgColor,
       passwordStatus: true,
       version: import.meta.env.VITE_VERSION,
+      systemName: import.meta.env.VITE_SYSTEM_NAME,
       loading: false,
       switchText: "password",
       switchIcon: "eye",
