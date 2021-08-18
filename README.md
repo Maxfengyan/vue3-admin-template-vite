@@ -4,7 +4,7 @@
 
 [在线预览地址](https://maxfengyan.github.io/vue3-admin-template-vite/#/)
 
-> 此项目是在 pan 大佬的<a href=https://github.com/PanJiaChen/vue-admin-template>vue-admin-template</a>项目基础上进行微改的 vue3 版本,基本沿用 vue-admin-template 项目构造，添加了一些更贴合项目的改动。如果有使用过 vue-admin-template 或者 vue-element-admin 的同学，轻松上手无缝切换。没使用过的话可以当作 vue3 的入门练习。
+> 此项目是在 pan 大佬的<a href=https://github.com/PanJiaChen/vue-admin-template>vue-admin-template</a>项目基础上进行功能微改的 vue3 版本,基本沿用 vue-admin-template 项目构造，添加了一些更贴合实际项目的改动和功能。如果有使用过 vue-admin-template 或者 vue-element-admin 的同学，轻松上手无缝切换。没使用过的话可以当作 vue3 的入门练习。
 
 #### 技术栈：vue3.x + vite2.x + element-plus + vue-router4.x + vuex4.x
 
@@ -16,6 +16,15 @@ cd vue3-admin-template-vite
 npm install
 npm run dev
 ```
+#### 项目截图
+
+![登录](./markimg/0.png)
+
+![登录](./markimg/1.png)
+
+![登录](./markimg/2.png)
+
+![登录](./markimg/3.png)
 
 #### 相对于 <a href=https://github.com/PanJiaChen/vue-admin-template>vue-admin-template</a> 改动
 
