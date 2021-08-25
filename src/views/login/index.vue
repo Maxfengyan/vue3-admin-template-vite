@@ -36,6 +36,9 @@
         >登录</el-button
       >
       <div class="version">版本号：{{ version }}</div>
+      <div class="version" style="margin-top: -10px">
+        账号：any &nbsp;&nbsp;&nbsp;&nbsp;密码：any
+      </div>
     </el-form>
   </div>
 </template>

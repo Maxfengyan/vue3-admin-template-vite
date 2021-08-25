@@ -2,6 +2,12 @@
   "resultCode": "0",
   "resultMessage": "获取成功",
   "data": {
-    "roles": ["template", "template-create", "template-audit", "portal", "portal-create"]
+    "roles": [
+      "template",
+      "template-create",
+      "template-audit",
+      "portal",
+      "portal-create"
+    ]
   }
 }

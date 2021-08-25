@@ -1,12 +1,21 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import { router } from "./router/index";
-import store from "./store";
-import directive from "./directive/index";
-import useElementUi from "./elementui";
-import "./core/permission";
-import "./stylus/index.styl";
-import svgIcon from "@/plugin/icons/svgIcon.vue";
+
+import { router } from "./router/index"; // router
+
+import store from "./store"; // store
+
+import directive from "./directive/index"; // directive
+
+import "element-plus/lib/theme-chalk/index.css"; // element css
+
+import useElementUi from "./elementui"; // 按需引入element-ui
+
+import "./core/permission"; // 动态校验路由
+
+import "./stylus/index.styl"; // css文件
+
+import svgIcon from "./plugin/icons/svgIcon.vue"; // svg文件
 
 const app = createApp(App);
 

@@ -16,10 +16,6 @@ import {
   ElDropdownItem,
   ElDropdownMenu,
 } from "element-plus";
-// import "dayjs/locale/zh-cn";
-// import lang from "@/plugin/language/zh-cn";
-// 设置语言
-// locale(lang);
 
 const useElementUi = (app) => {
   app.component(ElButton.name, ElButton);

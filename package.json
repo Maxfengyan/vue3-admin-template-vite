@@ -7,24 +7,24 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "element-plus": "^1.0.2-beta.46",
+    "element-plus": "^1.0.2-beta.71",
     "js-cookie": "^2.2.1",
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
     "path-to-regexp": "^6.2.0",
-    "vue": "^3.0.5",
-    "vue-router": "^4.0.9",
+    "vue": "^3.2.6",
+    "vue-router": "^4.0.11",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^1.2.3",
-    "@vue/compiler-sfc": "^3.0.5",
+    "@vitejs/plugin-vue": "^1.6.0",
+    "@vue/compiler-sfc": "^3.2.6",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "ip": "^1.1.5",
     "stylus": "^0.54.8",
     "svg-sprite-loader": "^6.0.7",
-    "vite": "^2.4.0-beta.1",
-    "vite-plugin-style-import": "^1.0.0"
+    "vite": "^2.5.1",
+    "vite-plugin-style-import": "^1.2.1"
   }
 }

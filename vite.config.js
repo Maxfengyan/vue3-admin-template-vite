@@ -1,4 +1,3 @@
-const { resolve } = require("path");
 const ip = require("ip");
 
 import { defineConfig } from "vite";
@@ -6,17 +5,22 @@ import vue from "@vitejs/plugin-vue";
 import styleImport from "vite-plugin-style-import";
 import { svgBuilder } from "./src/plugin/icons/svgBuilder";
 
+const path = require("path");
+
+function _resolve(dir) {
+  return path.resolve(__dirname, dir);
+}
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: {
-      "@": resolve(__dirname, "/src"),
+      "@": _resolve("src"),
     },
   },
   plugins: [
     vue(),
     svgBuilder("./src/plugin/icons/svg/"),
-    styleImport({
+    /* styleImport({
       libs: [
         {
           libraryName: "element-plus",
@@ -29,7 +33,7 @@ export default defineConfig({
           },
         },
       ],
-    }),
+    }), */
   ],
   server: {
     port: 9000,
