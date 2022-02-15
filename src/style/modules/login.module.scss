@@ -4,3 +4,27 @@
   height: 100vh;
   background: $bg-color;
 }
+.login_form {
+  width: 500px;
+  padding: 233px 35px 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.login_title {
+  color: #fff;
+  text-align: center;
+}
+
+.login_container input {
+  background: transparent !important;
+  outline: none;
+  border: none;
+  color: #fff;
+  height: 46px !important;
+}
+
+.login_container .el-form-item__content {
+  position: relative;
+  margin-left: 0 !important;
+}

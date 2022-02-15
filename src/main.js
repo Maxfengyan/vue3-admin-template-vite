@@ -1,12 +1,11 @@
 import { createApp } from "vue";
-import { router } from "./router/index";
-import ElementPlus from "element-plus";
-import zhCn from "element-plus/es/locale/lang/zh-cn";
+import naiveUi from "./core/importNaiveUi.js";
+import { router } from "./router";
+import store from "./store";
 import "./style/index.scss";
 import App from "./App.jsx";
 const app = createApp(App);
-app.use(ElementPlus, {
-  locale: zhCn,
-});
+naiveUi(app);
 app.use(router);
+app.use(store);
 app.mount("#app");

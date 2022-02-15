@@ -1,29 +1,90 @@
 import { defineComponent, reactive, ref } from "vue";
+import { useStore } from "vuex";
+import { useDialog } from "naive-ui";
+import rules from "./validator";
+import LoginUiCss from "./changeNaiveCss";
 import style from "@/style/modules/login.module.scss";
 const Login = defineComponent({
   name: "Login",
   setup() {
-    const loginForm = ref(0);
-    const rules = {
-      account: [{ required: true, message: "请输入登录账号", trigger: "blur" }],
-      password: [{ required: true, message: "请输入密码", trigger: "blur" }],
-    };
+    const store = useStore();
+    const formRef = ref(null);
+    const dialog = useDialog();
     const state = reactive({
-      userInfo: {
+      model: {
         account: "",
         password: "",
+        buttonStatus: false,
       },
     });
+
+    const login = () => {
+      formRef.value.validate((errors) => {
+        if (!errors) {
+          state.buttonStatus = true;
+          store
+            .dispatch("LoginAction", {
+              account: state.model.account,
+              password: state.model.password,
+            })
+            .then((res) => {
+              console.log(res);
+              state.buttonStatus = false;
+            })
+            .catch((err) => {
+              state.buttonStatus = false;
+              dialog.error({
+                title: "提示",
+                content: err,
+                positiveText: "确认",
+                onPositiveClick: () => {
+                  // 回调执行一些操作，比如清除密码或者账号
+                },
+              });
+              console.log(err);
+            });
+        }
+      });
+      /*  */
+    };
     return () => {
       return (
         <div class={style.login_container}>
-          <el-form ref={loginForm} model={state.userInfo} rules={rules} label-width="80px">
-            <el-form-item prop={state.userInfo.account}>
-              {/* <i class="login-user el-icon-user-solid"></i> */}
-              {state.userInfo.account}
-              <el-input v-model={state.userInfo.account} autocomplete="off" placeholder="用户名" />
-            </el-form-item>
-          </el-form>
+          <n-form class={style.login_form} model={state.model} ref={formRef} rules={rules}>
+            <h2 class={style.login_title}>XXX管理系统</h2>
+            <n-form-item path="account">
+              <n-input
+                value={state.model.account}
+                onInput={(e) => {
+                  state.model.account = e;
+                }}
+                clearable
+                class={style.login_input}
+                style={LoginUiCss.loginInput}
+                placeholder="请输入账号"
+                input-props={{ autocomplete: "off" }}
+              />
+            </n-form-item>
+
+            <n-form-item path="password" style="margin-top: -20px;">
+              <n-input
+                value={state.model.password}
+                onInput={(e) => {
+                  state.model.password = e;
+                }}
+                class={style.login_input}
+                style={LoginUiCss.loginInput}
+                input-props={{ autocomplete: "new-password" }}
+                type="password"
+                clearable
+                placeholder="请输入密码"
+                show-password-on="mousedown"
+              />
+            </n-form-item>
+            <n-button loading={state.buttonStatus} block color="#409eff" size="large" style="margin-top: 15px;" onClick={() => login()}>
+              登录
+            </n-button>
+          </n-form>
         </div>
       );
     };

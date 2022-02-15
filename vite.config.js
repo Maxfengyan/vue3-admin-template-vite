@@ -1,9 +1,6 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
-import ElementPlus from "unplugin-element-plus/vite";
-import Components from "unplugin-vue-components/vite";
-import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 
 const path = require("path");
 
@@ -17,15 +14,5 @@ export default defineConfig({
       "@": _resolve("src"),
     },
   },
-  plugins: [
-    vue(),
-    vueJsx({}),
-    ElementPlus({
-      importStyle: "sass",
-      useSource: true,
-    }),
-    Components({
-      resolvers: [ElementPlusResolver()],
-    }),
-  ],
+  plugins: [vue(), vueJsx({})],
 });
