@@ -1,8 +1,8 @@
-@import "../variable.scss";
+@import "../variable.module.scss";
 .login_container {
   width: 100vw;
   height: 100vh;
-  background: $bg-color;
+  background: $login-bgcolor;
 }
 .login_form {
   width: 500px;

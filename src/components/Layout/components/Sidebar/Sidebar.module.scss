@@ -1,0 +1,23 @@
+@import "@/style/variable.module.scss";
+.sidebar_container {
+  transition: width 0.28s;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 1001;
+  width: $sidebar-width;
+  background-color: $sidebar-bgcolor;
+  color: #fff;
+  user-select: none;
+}
+
+.sidebar_container_logo {
+  width: 100%;
+  height: 50px;
+  background: #3c90c3;
+  color: #fff;
+  cursor: pointer;
+}

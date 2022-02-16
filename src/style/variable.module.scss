@@ -1,0 +1,10 @@
+$login-bgcolor: #2d3a4b; // 登录背景色
+$sidebar-bgcolor: #304156; // 侧边栏背景色
+$sidebar-textcolor: #fff; // 侧边栏文字颜色
+$sidebar-width: 190px; // 侧边栏展开时宽度
+
+:export {
+  sidebarBgColor: $sidebar-bgcolor;
+  sidebarTextColor: $sidebar-textcolor;
+  sidebarWidth: $sidebar-width;
+}

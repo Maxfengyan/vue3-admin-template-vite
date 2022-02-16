@@ -1,5 +1,6 @@
 import { defineComponent, reactive, ref } from "vue";
 import { useStore } from "vuex";
+import { useRouter } from "vue-router";
 import { useDialog } from "naive-ui";
 import rules from "./validator";
 import LoginUiCss from "./changeNaiveCss";
@@ -8,6 +9,7 @@ const Login = defineComponent({
   name: "Login",
   setup() {
     const store = useStore();
+    const router = useRouter();
     const formRef = ref(null);
     const dialog = useDialog();
     const state = reactive({
@@ -28,8 +30,9 @@ const Login = defineComponent({
               password: state.model.password,
             })
             .then((res) => {
-              console.log(res);
               state.buttonStatus = false;
+              //跳转到默认页
+              router.push({ name: "Index" });
             })
             .catch((err) => {
               state.buttonStatus = false;
@@ -41,7 +44,6 @@ const Login = defineComponent({
                   // 回调执行一些操作，比如清除密码或者账号
                 },
               });
-              console.log(err);
             });
         }
       });

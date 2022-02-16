@@ -1,0 +1,13 @@
+@import "@/style/variable.module.scss";
+.app_wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.main_container {
+  min-height: 100%;
+  width: calc(100% - $sidebar-width);
+  transition: margin-left 0.28s;
+  margin-left: $sidebar-width;
+  position: relative;
+}

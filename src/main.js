@@ -2,6 +2,7 @@ import { createApp } from "vue";
 import naiveUi from "./core/importNaiveUi.js";
 import { router } from "./router";
 import store from "./store";
+import "./core/permission";
 import "./style/index.scss";
 import App from "./App.jsx";
 const app = createApp(App);

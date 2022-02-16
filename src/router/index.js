@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-
+import Layout from "../components/Layout/Layout.jsx";
 const powerType = import.meta.env.VITE_POWER_TYPE; // 权限类型
 /**
  * hidden: true                   如果为true，侧边栏显示，否则是为通用隐藏路由
@@ -17,8 +17,21 @@ const powerType = import.meta.env.VITE_POWER_TYPE; // 权限类型
 // 静态路由
 const constantRouters = [
   {
+    path: "/",
+    name: "Dashboard",
+    redirect: "/index",
+    component: Layout,
+    children: [
+      {
+        name: "Index",
+        path: "index",
+        component: () => import("@/views/index/index.jsx"),
+      },
+    ],
+  },
+  {
     path: "/login",
-    name: "login",
+    name: "Login",
     component: () => import("@/views/login/login.jsx"),
   },
 ];
