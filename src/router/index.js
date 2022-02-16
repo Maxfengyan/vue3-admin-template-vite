@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import Layout from "../components/Layout/Layout.jsx";
+import Layout from "../layout/Layout.jsx";
 const powerType = import.meta.env.VITE_POWER_TYPE; // 权限类型
 /**
  * hidden: true                   如果为true，侧边栏显示，否则是为通用隐藏路由
@@ -38,7 +38,8 @@ const constantRouters = [
 
 const asyncRoutes = [];
 
-const allRouter = powerType == "1" ? constantRouters.concat(asyncRoutes) : constantRouters;
+const allRouter =
+  powerType == "1" ? constantRouters.concat(asyncRoutes) : constantRouters;
 export const router = createRouter({
   history: createWebHashHistory(),
   routes: allRouter,

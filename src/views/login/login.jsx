@@ -1,4 +1,4 @@
-import { defineComponent, reactive, ref } from "vue";
+import { defineComponent, Fragment, reactive, ref } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 import { useDialog } from "naive-ui";
@@ -52,7 +52,12 @@ const Login = defineComponent({
     return () => {
       return (
         <div class={style.login_container}>
-          <n-form class={style.login_form} model={state.model} ref={formRef} rules={rules}>
+          <n-form
+            class={style.login_form}
+            model={state.model}
+            ref={formRef}
+            rules={rules}
+          >
             <h2 class={style.login_title}>XXX管理系统</h2>
             <n-form-item path="account">
               <n-input
@@ -65,7 +70,13 @@ const Login = defineComponent({
                 style={LoginUiCss.loginInput}
                 placeholder="请输入账号"
                 input-props={{ autocomplete: "off" }}
-              />
+              >
+                {{
+                  prefix: (props) => {
+                    return <div style="line-height: 30px;">{123}</div>;
+                  },
+                }}
+              </n-input>
             </n-form-item>
 
             <n-form-item path="password" style="margin-top: -20px;">
@@ -83,7 +94,14 @@ const Login = defineComponent({
                 show-password-on="mousedown"
               />
             </n-form-item>
-            <n-button loading={state.buttonStatus} block color="#409eff" size="large" style="margin-top: 15px;" onClick={() => login()}>
+            <n-button
+              loading={state.buttonStatus}
+              block
+              color="#409eff"
+              size="large"
+              style="margin-top: 15px;"
+              onClick={() => login()}
+            >
               登录
             </n-button>
           </n-form>
