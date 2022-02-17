@@ -66,14 +66,13 @@ const Login = defineComponent({
                   state.model.account = e;
                 }}
                 clearable
-                class={style.login_input}
                 style={LoginUiCss.loginInput}
                 placeholder="请输入账号"
                 input-props={{ autocomplete: "off" }}
               >
                 {{
-                  prefix: (props) => {
-                    return <div style="line-height: 30px;">{123}</div>;
+                  prefix: () => {
+                    return <svg-icon class={style.input_svg} name="user" />;
                   },
                 }}
               </n-input>
@@ -85,14 +84,19 @@ const Login = defineComponent({
                 onInput={(e) => {
                   state.model.password = e;
                 }}
-                class={style.login_input}
                 style={LoginUiCss.loginInput}
                 input-props={{ autocomplete: "new-password" }}
                 type="password"
                 clearable
                 placeholder="请输入密码"
                 show-password-on="mousedown"
-              />
+              >
+                {{
+                  prefix: () => {
+                    return <svg-icon class={style.input_svg} name="lock" />;
+                  },
+                }}
+              </n-input>
             </n-form-item>
             <n-button
               loading={state.buttonStatus}

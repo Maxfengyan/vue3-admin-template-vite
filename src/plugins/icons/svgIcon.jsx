@@ -1,5 +1,5 @@
 import { defineComponent, computed } from "vue";
-
+import style from "./svgIcon.module.scss";
 const SvgPlugin = defineComponent({
   name: "SvgPlugin",
   props: {
@@ -11,19 +11,25 @@ const SvgPlugin = defineComponent({
       type: String,
       default: "",
     },
+    class: {
+      type: String,
+      default: "",
+    },
   },
   setup(props) {
-    console.log(props.name);
     const iconName = computed(() => `#icon-${props.name}`);
-    const svgClass = computed(() => {
-      /* if (props.name) {
+    /* const svgClass = computed(() => {
+      if (props.name) {
         return `svg-icon icon-${props.name}`;
-      } */
+      } 
       return "svg-icon";
-    });
+    });*/
     return () => {
       return (
-        <svg class={svgClass.value} style={{ color: props.color }}>
+        <svg
+          class={style.svg_icon + " " + props.class}
+          style={{ color: props.color }}
+        >
           <use xlink:href={iconName.value} />
         </svg>
       );
