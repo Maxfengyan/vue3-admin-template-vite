@@ -1,0 +1,10 @@
+{
+  "dataCode": "0000",
+  "dataMessage": "获取成功",
+  "data": {
+    "power": [{ "template": ["template-create", "template-audit"] }, { "buy": ["buy-list", "buy-unsubscribe"] }, { "vip": ["vip-manage"] }],
+    "name": "超级无敌管理员",
+    "role": "admin",
+    "createTime": "2022-02-18"
+  }
+}

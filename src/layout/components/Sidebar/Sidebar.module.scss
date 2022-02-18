@@ -1,4 +1,5 @@
 @import "@/style/variable.module.scss";
+@import "@/style/mixins.scss";
 .sidebar_container {
   transition: width 0.28s;
   height: 100%;
@@ -13,11 +14,24 @@
   color: #fff;
   user-select: none;
 }
-
+/* title component */
 .sidebar_container_logo {
   width: 100%;
   height: 50px;
-  background: #3c90c3;
-  color: #fff;
+  background: $sidebartitle-bgcolor;
+  color: $sidebar-textcolor;
   cursor: pointer;
+  line-height: 50px;
+  overflow: hidden;
+  h3 {
+    margin: 0;
+    float: left;
+    width: calc(100% - 54px);
+    @include ellipsis;
+  }
+  svg {
+    font-size: 34px;
+    float: left;
+    margin: 8px 10px 0 10px;
+  }
 }

@@ -52,13 +52,8 @@ const Login = defineComponent({
     return () => {
       return (
         <div class={style.login_container}>
-          <n-form
-            class={style.login_form}
-            model={state.model}
-            ref={formRef}
-            rules={rules}
-          >
-            <h2 class={style.login_title}>XXX管理系统</h2>
+          <n-form class={style.login_form} model={state.model} ref={formRef} rules={rules}>
+            <h2 class={style.login_title}>{import.meta.env.VITE_SYSTEM_NAME}</h2>
             <n-form-item path="account">
               <n-input
                 value={state.model.account}
@@ -98,14 +93,7 @@ const Login = defineComponent({
                 }}
               </n-input>
             </n-form-item>
-            <n-button
-              loading={state.buttonStatus}
-              block
-              color="#409eff"
-              size="large"
-              style="margin-top: 15px;"
-              onClick={() => login()}
-            >
+            <n-button loading={state.buttonStatus} block color="#409eff" size="large" style="margin-top: 15px;" onClick={() => login()}>
               登录
             </n-button>
           </n-form>

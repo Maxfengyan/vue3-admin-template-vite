@@ -1,13 +1,15 @@
 import { defineComponent } from "vue";
 import { NScrollbar, NLayoutSider, NMenu } from "naive-ui";
+import titleComponent from "./components/Title";
 import SidebarUiCss from "./changeNaiveCss";
 import style from "./Sidebar.module.scss";
 const Sidebar = defineComponent({
   name: "Sidebar",
   components: {
-    NScrollbar,
     NMenu,
+    NScrollbar,
     NLayoutSider,
+    titleComponent,
   },
   setup() {
     const menuOptions = [
@@ -18,6 +20,12 @@ const Sidebar = defineComponent({
           {
             label: "鼠",
             key: "rat",
+            children: [
+              {
+                label: "鼠",
+                key: "rat",
+              },
+            ],
           },
         ],
       },
@@ -27,9 +35,11 @@ const Sidebar = defineComponent({
       },
     ];
     return () => {
+      const title_component = import.meta.env.VITE_SYSTEM_SWITCH === "true" ? <title-component /> : null;
       return (
         <div class={style.sidebar_container}>
-          <div class={style.sidebar_container_logo}></div>
+          {title_component}
+
           <n-layout-sider collapse-mode="width" collapsed={false} collapsed-width={64} width={SidebarUiCss.sidebarWidth} style={SidebarUiCss.sidebar}>
             <n-menu collapsed={false} collapsed-icon-size={22} options={menuOptions} style={SidebarUiCss.menu} />
           </n-layout-sider>

@@ -15,4 +15,7 @@ export default defineConfig({
     },
   },
   plugins: [vue(), svgBuilder("./src/plugins/icons/svg/"), vueJsx({})],
+  server: {
+    watch: "./src/plugins/icons/svg/",
+  },
 });
