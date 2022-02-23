@@ -1,5 +1,5 @@
 import { defineComponent } from "vue";
-import { NLayout, NLayoutSider, NLayoutHeader } from "naive-ui";
+import { NLayout } from "naive-ui";
 import appMain from "./components/Appmain/Appmain";
 import navBar from "./components/Navbar/Navbar";
 import sideBar from "./components/Sidebar/Sidebar";
@@ -9,8 +9,6 @@ const Layout = defineComponent({
   name: "Layout",
   components: {
     NLayout,
-    NLayoutSider,
-    NLayoutHeader,
     navBar,
     sideBar,
     appMain,

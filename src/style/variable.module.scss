@@ -3,9 +3,11 @@ $sidebar-bgcolor: #304156; // 侧边栏背景色
 $sidebartitle-bgcolor: #3c90c3; // 侧边栏标题处背景色
 $sidebar-textcolor: #fff; // 侧边栏文字颜色
 $sidebar-width: 190px; // 侧边栏展开时宽度
+$navbarhover-color: #409eff; // 顶部栏hover颜色
 
 :export {
   sidebarBgColor: $sidebar-bgcolor;
   sidebarTextColor: $sidebar-textcolor;
   sidebarWidth: $sidebar-width;
+  navbarhovercolor: $navbarhover-color;
 }

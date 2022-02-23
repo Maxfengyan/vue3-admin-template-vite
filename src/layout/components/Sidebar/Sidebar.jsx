@@ -1,5 +1,5 @@
 import { defineComponent } from "vue";
-import { NScrollbar, NLayoutSider, NMenu } from "naive-ui";
+import { NLayoutSider, NMenu } from "naive-ui";
 import titleComponent from "./components/Title";
 import SidebarUiCss from "./changeNaiveCss";
 import style from "./Sidebar.module.scss";
@@ -7,7 +7,6 @@ const Sidebar = defineComponent({
   name: "Sidebar",
   components: {
     NMenu,
-    NScrollbar,
     NLayoutSider,
     titleComponent,
   },
