@@ -26,15 +26,15 @@
     padding-left: 3px;
   }
 }
-.userInfo:hover {
+/* .userInfo:hover {
   .userInfo_arrow {
     transform: rotate(0deg);
   }
-}
+} */
 .userInfo_avatar {
   font-size: 24px;
 }
 .userInfo_arrow {
-  transform: rotate(90deg);
+  // transform: rotate(90deg);
   transition: transform 0.2s ease-out;
 }

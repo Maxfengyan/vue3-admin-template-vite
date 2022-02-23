@@ -15,14 +15,39 @@ const Sidebar = defineComponent({
       {
         label: "模板管理",
         key: "pinball-1973",
+        icon: () => {
+          return <svg-icon name="template" />;
+        },
         children: [
           {
-            label: "鼠",
+            label: "模板创建",
             key: "rat",
+            icon: () => {
+              return <svg-icon name="template-create" />;
+            },
+          },
+          {
+            label: "模板审核",
+            key: "rats",
+            icon: () => {
+              return <svg-icon name="template-audit" />;
+            },
             children: [
               {
-                label: "鼠",
-                key: "rat",
+                label: "模板创建",
+                key: "r2at",
+                icon: () => {
+                  return <svg-icon name="template-create" />;
+                },
+                children: [
+                  {
+                    label: "模板创建",
+                    key: "r22at",
+                    icon: () => {
+                      return <svg-icon name="template-create" />;
+                    },
+                  },
+                ],
               },
             ],
           },
@@ -34,13 +59,27 @@ const Sidebar = defineComponent({
       },
     ];
     return () => {
-      const title_component = import.meta.env.VITE_SYSTEM_SWITCH === "true" ? <title-component /> : null;
+      const title_component =
+        import.meta.env.VITE_SYSTEM_SWITCH === "true" ? (
+          <title-component />
+        ) : null;
       return (
         <div class={style.sidebar_container}>
           {title_component}
 
-          <n-layout-sider collapse-mode="width" collapsed={false} collapsed-width={64} width={SidebarUiCss.sidebarWidth} style={SidebarUiCss.sidebar}>
-            <n-menu collapsed={false} collapsed-icon-size={22} options={menuOptions} style={SidebarUiCss.menu} />
+          <n-layout-sider
+            collapse-mode="width"
+            collapsed={false}
+            collapsed-width={64}
+            width={SidebarUiCss.sidebarWidth}
+            style={SidebarUiCss.sidebar}
+          >
+            <n-menu
+              collapsed={false}
+              indent={26}
+              options={menuOptions}
+              style={SidebarUiCss.menu}
+            />
           </n-layout-sider>
         </div>
       );
