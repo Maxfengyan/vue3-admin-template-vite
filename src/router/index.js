@@ -2,13 +2,13 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import Layout from "../layout/Layout.jsx";
 const powerType = import.meta.env.VITE_POWER_TYPE; // 权限类型
 /**
- * hidden: true                   如果为true，侧边栏显示，否则是为通用隐藏路由
- * alwaysShow: true               如果为true，将总显示
+ * hidden: true                   如果为true，侧边栏显示，否则是为通用隐藏路由(默认false)
+ * alwaysShow: true               如果为true，将总显示子菜单，如果为false，当子菜单为一个时默认替换掉父菜单(默认false)
  *                                如果设置了,路由数量必须大于1
  * redirect: noRedirect           如果设置noRedirect，面包屑不重定向标题
  * meta : {
-    role: 'admin'                 路由权限唯一标识
-    title: 'title'                路由标题，面包屑展示标题
+    permission: 'admin'           路由权限唯一标识
+    title: 'title'                路由标题，菜单展示标题/面包屑展示标题
     icon: 'svg-name'              路由图标
     breadcrumb: false             如果为false，面包屑标题隐藏
   }
@@ -38,7 +38,7 @@ const constantRouters = [
   },
 ];
 
-const asyncRoutes = [
+export const asyncRoutes = [
   {
     path: "/template",
     component: Layout,
@@ -46,7 +46,7 @@ const asyncRoutes = [
     redirect: "/template/create",
     meta: {
       title: "模板管理",
-      role: "template",
+      permission: "template",
       icon: "template",
     },
     children: [
@@ -57,7 +57,7 @@ const asyncRoutes = [
         meta: {
           title: "模板创建",
           icon: "template-create",
-          role: "template-create",
+          permission: "template-create",
         },
       },
       {
@@ -67,7 +67,7 @@ const asyncRoutes = [
         meta: {
           title: "模板审核",
           icon: "template-audit",
-          role: "template-audit",
+          permission: "template-audit",
         },
       },
     ],
@@ -78,7 +78,8 @@ const asyncRoutes = [
     name: "Portal",
     redirect: "/portal/create",
     meta: {
-      role: "portal",
+      permission: "portal",
+      title: "门户管理",
       icon: "portal",
     },
     children: [
@@ -89,7 +90,7 @@ const asyncRoutes = [
         meta: {
           title: "门户创建",
           icon: "portal-create",
-          role: "portal-create",
+          permission: "portal-create",
         },
       },
     ],
@@ -118,6 +119,7 @@ const asyncRoutes = [
 ];
 
 const allRouter = powerType == "1" ? constantRouters.concat(asyncRoutes) : constantRouters;
+
 export const router = createRouter({
   history: createWebHashHistory(),
   routes: allRouter,

@@ -1,25 +1,38 @@
+/* 
+  修改naive-ui 样式
+*/
+@import "./variable.module.scss";
 .n-config-provider {
   width: 100%;
   height: 100%;
 }
 
-.n-menu-item-content svg {
-  color: #bfcbd9;
-  font-size: 16px;
-}
-.n-menu-item-content:hover {
-  background-color: #263345 !important;
-}
-
 .n-menu .n-submenu {
   margin-top: 0;
+}
+.n-submenu-children {
+  background-color: $sidebarsub-bgcolor;
 }
 
 .n-menu .n-menu-item::before {
   left: 0;
   right: 0;
 }
+.n-menu-item-content svg {
+  color: $sidebar-textcolor;
+  font-size: 16px;
+}
+.n-menu-item-content:hover {
+  background-color: $sidebar-hoverbgcolor;
+  svg {
+    color: $navbarhover-color !important;
+  }
+}
 
 .n-menu-item--selected svg {
-  color: #409eff !important;
+  color: $navbarhover-color;
+}
+
+.n-breadcrumb-item {
+  padding-top: 2px;
 }
