@@ -1,9 +1,10 @@
 $login-bgcolor: #2d3a4b; // 登录背景色
 $sidebar-bgcolor: #304156; // 侧边栏背景色
+
 $sidebarsub-bgcolor: #1f2d3d; // 二级三级四级...侧边栏背景色
-$sidebartitle-bgcolor: #3c90c3; // 侧边栏标题处背景色
 $sidebar-textcolor: #bfcbd9; // 侧边栏文字颜色
-$sidebar-hoverbgcolor: #263345; // 侧边栏hover背景色
+$sidebartextactive-bgcolor: #2d8cf0; // 侧边栏active背景色
+$sidebartextactive-color: #fff; // 侧边栏active文字颜色
 $sidebar-width: 190px; // 侧边栏展开时宽度
 $navbarhover-color: #409eff; // 顶部栏hover颜色
 
@@ -12,5 +13,6 @@ $navbarhover-color: #409eff; // 顶部栏hover颜色
   sidebarTextColor: $sidebar-textcolor;
   sidebarWidth: $sidebar-width;
   navbarhovercolor: $navbarhover-color;
-  sidebarhoverbgcolor: $sidebar-hoverbgcolor;
+  sidebartextactivecolor: $sidebartextactive-color;
+  sidebartextactivebgcolor: $sidebartextactive-bgcolor;
 }

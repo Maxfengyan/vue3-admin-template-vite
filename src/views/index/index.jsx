@@ -1,9 +1,10 @@
 import { defineComponent } from "vue";
+import welcome from "@/assets/welcome.png";
 const Index = defineComponent({
   name: "Index",
   setup() {
     return () => {
-      return <div>欢迎</div>;
+      return <img src={welcome} alt="welcome" title="welcome" />;
     };
   },
 });

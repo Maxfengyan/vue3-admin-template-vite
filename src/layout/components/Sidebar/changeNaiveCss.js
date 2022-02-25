@@ -5,12 +5,13 @@ const SidebarUiCss = {
   },
   sidebarWidth: style.sidebarWidth,
   menu: {
-    "--n-item-text-color": style.sidebarTextColor,
-    "--n-item-height": "54px",
-    "--n-item-text-color-hover": style.navbarhovercolor,
-    "--n-item-text-color-child-active": style.sidebarTextColor,
-    "--n-item-color-active": style.sidebarhoverbgcolor,
-    "--n-item-text-color-active": style.navbarhovercolor,
+    "--n-border-radius": "8px",
+    "--n-item-text-color": style.sidebarTextColor, // 文字颜色
+    "--n-item-text-color-hover": style.sidebartextactivecolor, // hover文字颜色
+    "--n-item-color-active": style.sidebartextactivebgcolor, // 选中后背景颜色
+    "--n-item-text-color-active": style.sidebartextactivecolor, // 选中后文字颜色
+    "--n-item-text-color-child-active": style.sidebartextactivecolor, // 选中后父节点文字颜色
+    "--n-item-height": "50px", // 高度
   },
 };
 

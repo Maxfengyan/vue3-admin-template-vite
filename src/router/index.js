@@ -53,7 +53,7 @@ export const asyncRoutes = [
       {
         path: "create",
         name: "template-create",
-        component: () => import("@/views/template/create/index.vue"),
+        component: () => import("@/views/template/create/create.jsx"),
         meta: {
           title: "模板创建",
           icon: "template-create",
@@ -63,7 +63,7 @@ export const asyncRoutes = [
       {
         path: "audit",
         name: "template-audit",
-        component: () => import("@/views/template/audit/index.vue"),
+        component: () => import("@/views/template/audit/audit.jsx"),
         meta: {
           title: "模板审核",
           icon: "template-audit",
@@ -86,7 +86,7 @@ export const asyncRoutes = [
       {
         path: "create",
         name: "portal-create",
-        component: () => import("@/views/portal/create/index.vue"),
+        component: () => import("@/views/portal/create/create.jsx"),
         meta: {
           title: "门户创建",
           icon: "portal-create",
@@ -98,10 +98,9 @@ export const asyncRoutes = [
   {
     path: "/extra",
     name: "Extra",
-    component: () => import("@/views/404/index.vue"),
     children: [
       {
-        path: "https://github.com/Maxfengyan/vue3-admin-template-vite",
+        path: "https://gitee.com/Maxfengyan/vue3-admin-template-vite",
         meta: {
           title: "外链",
           icon: "link",
@@ -114,7 +113,7 @@ export const asyncRoutes = [
     path: "/:pathMatch(.*)*",
     hidden: true,
     name: "404",
-    component: () => import("@/views/404/index.vue"),
+    component: () => import("@/views/404/page404.jsx"),
   },
 ];
 

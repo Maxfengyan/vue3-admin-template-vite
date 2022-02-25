@@ -1,4 +1,5 @@
 import { h } from "vue";
+import { RouterLink } from "vue-router";
 import { asyncRoutes } from "@/router/index";
 import svgIcon from "@/plugins/icons/svgIcon.jsx";
 const menuOptions = () => {
@@ -10,6 +11,8 @@ const menuOptions = () => {
   }
   return result;
 };
+
+// 过滤处理路由
 const filterRouter = (route) => {
   let target = [];
   // 有子路由
@@ -18,7 +21,7 @@ const filterRouter = (route) => {
       // 确定命名title && 非隐藏
       if (!item.hidden) {
         let routeItem = {
-          label: item?.meta?.title || item?.name,
+          label: handleLabelRender(item),
           key: item?.name,
           icon: () => {
             return h(svgIcon, { name: item?.meta?.icon });
@@ -28,10 +31,12 @@ const filterRouter = (route) => {
           // 判断是否需要折叠唯一子路由
           if (item.children.length === 1 && !item.alwaysShow) {
             let onlyRouteResult = findLastRoute(item.children);
+            // 返回数据说明最终节点有多个路由
             if (Array.isArray(onlyRouteResult)) {
               routeItem.children = filterRouter(onlyRouteResult);
             } else {
-              routeItem.label = onlyRouteResult?.meta?.title;
+              // 返回对象说明找到最终节点替换原节点
+              routeItem.label = handleLabelRender(onlyRouteResult);
               routeItem.key = onlyRouteResult?.name || onlyRouteResult?.path;
               routeItem.icon = () => {
                 return h(svgIcon, { name: onlyRouteResult?.meta?.icon });
@@ -46,6 +51,30 @@ const filterRouter = (route) => {
     });
   }
   return target;
+};
+
+const handleLabelRender = (route) => {
+  // 如果有子节点，渲染文本
+  if (Array.isArray(route.children) && route.children.length > 0) {
+    return route?.meta?.title || route?.name;
+  } else {
+    // 无子节点
+    // 判断是否是外链形式
+    if (isExternal(route.path)) {
+      return () => h("a", { href: route?.path }, route?.meta?.title || route?.name);
+    } else {
+      return () =>
+        h(
+          RouterLink,
+          {
+            to: {
+              name: route.name,
+            },
+          },
+          { default: () => route?.meta?.title || route?.name }
+        );
+    }
+  }
 };
 
 // 找出最终路由

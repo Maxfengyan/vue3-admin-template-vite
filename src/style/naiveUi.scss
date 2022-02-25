@@ -7,9 +7,6 @@
   height: 100%;
 }
 
-.n-menu .n-submenu {
-  margin-top: 0;
-}
 .n-submenu-children {
   background-color: $sidebarsub-bgcolor;
 }
@@ -18,21 +15,35 @@
   left: 0;
   right: 0;
 }
+
 .n-menu-item-content svg {
   color: $sidebar-textcolor;
   font-size: 16px;
 }
+
 .n-menu-item-content:hover {
-  background-color: $sidebar-hoverbgcolor;
+  // background-color: #263445!important;
   svg {
-    color: $navbarhover-color !important;
+    color: #fff !important;
   }
 }
 
-.n-menu-item--selected svg {
-  color: $navbarhover-color;
+.n-menu-item--selected {
+  svg {
+    color: #fff;
+  }
 }
 
 .n-breadcrumb-item {
   padding-top: 2px;
+}
+
+.n-menu .n-menu-item-content.n-menu-item-content--child-active .n-menu-item-content__icon {
+  svg {
+    color: var(--n-item-text-color-child-active);
+  }
+}
+
+.n-menu .n-menu-item:not(.n-menu-item--selected):hover {
+  background-color: #263445 !important;
 }
