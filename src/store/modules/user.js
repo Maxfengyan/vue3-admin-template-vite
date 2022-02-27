@@ -6,7 +6,7 @@ const state = {
 };
 
 const mutations = {
-  SET_Token: (state, token) => {
+  SET_TOKEN: (state, token) => {
     state.token = token;
   },
 };
@@ -20,7 +20,7 @@ const actions = {
       const dataMessage = result?.dataMessage;
       const token = result?.data?.token;
       if (dataCode === "0000" && token) {
-        context.commit("SET_Token", token);
+        context.commit("SET_TOKEN", token);
         setToken(token);
         resolve(token);
       } else {
