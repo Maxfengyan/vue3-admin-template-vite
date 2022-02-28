@@ -1,7 +1,7 @@
 import { computed, defineComponent, watch, ref } from "vue";
-import { NLayoutSider, NMenu, NEllipsis } from "naive-ui";
+import { NLayoutSider, NMenu } from "naive-ui";
 import { useRoute } from "vue-router";
-import { useStore } from "vuex";
+import handleCollapsed from "../../mixin";
 import menuOptions from "./components/SideOptions";
 import titleComponent from "./components/Title";
 import SidebarUiCss from "./changeNaiveCss";
@@ -10,29 +10,24 @@ const Sidebar = defineComponent({
   name: "Sidebar",
   components: {
     NMenu,
-    NEllipsis,
     NLayoutSider,
     titleComponent,
   },
   setup() {
-    const store = useStore();
-    const collapsed = computed(() => {
-      return store.getters.collapsed;
-    });
+    const { getCollapsedValue } = handleCollapsed();
     const route = useRoute();
     const currentRouteName = computed(() => {
       return route.name;
     });
 
     return () => {
-      const title_component =
-        import.meta.env.VITE_SYSTEM_SWITCH === "true" ? <title-component /> : null;
+      const title_component = import.meta.env.VITE_SYSTEM_SWITCH === "true" ? <title-component collapsed-value={getCollapsedValue()} /> : null;
       return (
         <div class={style.sidebar_container}>
           {title_component}
           <n-layout-sider
             collapse-mode="width"
-            collapsed={collapsed.value}
+            collapsed={getCollapsedValue()}
             collapsed-width={64}
             width={SidebarUiCss.sidebarWidth}
             style={SidebarUiCss.sidebar}
@@ -40,7 +35,7 @@ const Sidebar = defineComponent({
             <n-menu
               default-value={currentRouteName.value}
               watch-props={["defaultValue"]}
-              collapsed={collapsed.value}
+              collapsed={getCollapsedValue()}
               indent={26}
               options={menuOptions()}
               style={SidebarUiCss.menu}

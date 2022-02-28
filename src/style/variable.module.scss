@@ -6,12 +6,14 @@ $sidebar-textcolor: #bfcbd9; // 侧边栏文字颜色
 $sidebartextactive-bgcolor: #2d8cf0; // 侧边栏active背景色
 $sidebartextactive-color: #fff; // 侧边栏active文字颜色
 $sidebar-width: 190px; // 侧边栏展开时宽度
+$sidebar-collapsedwidth: 64px; // 侧边栏收缩时宽度
 $navbarhover-color: #409eff; // 顶部栏hover颜色
 
 :export {
+  sidebarWidth: $sidebar-width;
+  sidebarCollapsedWidth: $sidebar-collapsedwidth;
   sidebarBgColor: $sidebar-bgcolor;
   sidebarTextColor: $sidebar-textcolor;
-  sidebarWidth: $sidebar-width;
   navbarhovercolor: $navbarhover-color;
   sidebartextactivecolor: $sidebartextactive-color;
   sidebartextactivebgcolor: $sidebartextactive-bgcolor;

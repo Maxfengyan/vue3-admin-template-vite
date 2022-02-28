@@ -47,3 +47,8 @@
 .n-menu .n-menu-item:not(.n-menu-item--selected):hover {
   background-color: #263445 !important;
 }
+
+.n-breadcrumb-item__link,
+.n-breadcrumb-item__separator {
+  user-select: none;
+}

@@ -6,8 +6,8 @@
 }
 .main_container {
   min-height: 100%;
-  width: calc(100% - $sidebar-width);
   transition: margin-left 0.28s;
-  margin-left: $sidebar-width;
+  // width: calc(100% - $sidebar-width);
+  // margin-left: $sidebar-width;
   position: relative;
 }
