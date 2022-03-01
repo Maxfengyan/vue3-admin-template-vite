@@ -1,8 +1,8 @@
-import { computed, defineComponent, watch, ref } from "vue";
+import { computed, defineComponent } from "vue";
 import { NLayoutSider, NMenu } from "naive-ui";
 import { useRoute } from "vue-router";
 import handleCollapsed from "../../mixin";
-import menuOptions from "./components/SideOptions";
+import menuOptions from "./SideOptions";
 import titleComponent from "./components/Title";
 import SidebarUiCss from "./changeNaiveCss";
 import style from "./Sidebar.module.scss";
@@ -28,7 +28,7 @@ const Sidebar = defineComponent({
           <n-layout-sider
             collapse-mode="width"
             collapsed={getCollapsedValue()}
-            collapsed-width={64}
+            collapsed-width={parseInt(SidebarUiCss.sidebarCollapsedWidth)}
             width={SidebarUiCss.sidebarWidth}
             style={SidebarUiCss.sidebar}
           >

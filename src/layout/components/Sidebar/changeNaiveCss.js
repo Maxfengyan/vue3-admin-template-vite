@@ -4,6 +4,7 @@ const SidebarUiCss = {
     "--n-color": style.sidebarBgColor,
   },
   sidebarWidth: style.sidebarWidth,
+  sidebarCollapsedWidth: style.sidebarCollapsedWidth,
   menu: {
     "--n-border-radius": "8px",
     "--n-item-text-color": style.sidebarTextColor, // 文字颜色

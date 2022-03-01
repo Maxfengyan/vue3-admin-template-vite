@@ -1,5 +1,6 @@
+import { getCollapsed, setCollapsed } from "@/core/auth.js";
 const state = {
-  collapsed: false,
+  collapsed: getCollapsed() || false,
 };
 
 const mutations = {
@@ -10,6 +11,7 @@ const mutations = {
 
 const actions = {
   HandleChangeCollapsed(context) {
+    setCollapsed(!state.collapsed);
     context.commit("SET_COLLAPSED", !state.collapsed);
   },
 };

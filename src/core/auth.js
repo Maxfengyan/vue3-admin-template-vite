@@ -9,6 +9,7 @@
 import Cookies from "js-cookie";
 
 const Token = "vue3-token";
+const Collapsed = "vue3-collapsed";
 
 export const getToken = () => {
   return Cookies.get(Token);
@@ -20,4 +21,12 @@ export const setToken = (token) => {
 
 export const removeToken = () => {
   Cookies.remove(Token);
+};
+
+export const getCollapsed = () => {
+  return Cookies.get(Collapsed) === "true" ? true : false;
+};
+
+export const setCollapsed = (collapsedValue) => {
+  Cookies.set(Collapsed, collapsedValue);
 };

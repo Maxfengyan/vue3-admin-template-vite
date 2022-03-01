@@ -22,15 +22,14 @@
 }
 
 .n-menu-item-content:hover {
-  // background-color: #263445!important;
   svg {
-    color: #fff !important;
+    color: $sidebartextactive-color !important;
   }
 }
 
 .n-menu-item--selected {
   svg {
-    color: #fff;
+    color: $sidebartextactive-color;
   }
 }
 
@@ -45,10 +44,15 @@
 }
 
 .n-menu .n-menu-item:not(.n-menu-item--selected):hover {
-  background-color: #263445 !important;
+  background-color: $sidebartexthover-bgcolor !important;
 }
 
 .n-breadcrumb-item__link,
 .n-breadcrumb-item__separator {
   user-select: none;
+}
+
+.n-dropdown {
+  --n-option-text-color-active: #2d8cf0 !important;
+  --n-option-color-active: rgba(45, 140, 240, 0.1) !important;
 }

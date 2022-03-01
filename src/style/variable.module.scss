@@ -3,10 +3,11 @@ $sidebar-bgcolor: #304156; // 侧边栏背景色
 
 $sidebarsub-bgcolor: #1f2d3d; // 二级三级四级...侧边栏背景色
 $sidebar-textcolor: #bfcbd9; // 侧边栏文字颜色
-$sidebartextactive-bgcolor: #2d8cf0; // 侧边栏active背景色
+$sidebartextactive-bgcolor: #2d8cf0; // 侧边栏active/hover背景色
+$sidebartexthover-bgcolor: #263445; // 侧边栏hover背景色
 $sidebartextactive-color: #fff; // 侧边栏active文字颜色
 $sidebar-width: 190px; // 侧边栏展开时宽度
-$sidebar-collapsedwidth: 64px; // 侧边栏收缩时宽度
+$sidebar-collapsedwidth: 54px; // 侧边栏收缩时宽度
 $navbarhover-color: #409eff; // 顶部栏hover颜色
 
 :export {

@@ -9,7 +9,7 @@ const powerType = import.meta.env.VITE_POWER_TYPE; // 权限类型
 
 NProgress.configure({ showSpinner: false }); // 进度条
 
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
   // 进度条开始
   NProgress.start();
   // document.title = getPageTitle(to.meta.title);
@@ -18,6 +18,23 @@ router.beforeEach((to, from, next) => {
   if (token) {
     // 动态权限
     if (powerType === "2") {
+      const { routes } = store.getters;
+      // 权限正常
+      if (Array.isArray(routes) && routes.length > 0) {
+        next();
+      } else {
+        // 已经登录但是可能强制刷新页面
+        const result = await store.dispatch("GetUserInfo", token);
+        if (Array.isArray(result) && result.length > 0) {
+          // 与路由表比对过滤权限
+          const routes = await store.dispatch("GenerateRoutes", result);
+          routes.forEach((item) => router.addRoute(item));
+          next({ ...to, replace: true });
+        } else {
+          alert("无权限");
+          return false;
+        }
+      }
     } else {
       // 静态路由权限
       // 如果目标路由是登录页面重定向到默认页
@@ -36,4 +53,3 @@ router.beforeEach((to, from, next) => {
   }
   NProgress.done();
 });
-

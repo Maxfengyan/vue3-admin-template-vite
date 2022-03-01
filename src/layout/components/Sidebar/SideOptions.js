@@ -8,6 +8,7 @@ const menuOptions = () => {
   if (powerType === "1") {
     // 静态路由权限呈现
     result = filterRouter(asyncRoutes);
+  } else {
   }
   return result;
 };

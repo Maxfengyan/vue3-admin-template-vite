@@ -30,6 +30,7 @@ const Login = defineComponent({
               password: state.model.password,
             })
             .then((res) => {
+              return store.dispatch("GetUserInfo", res);
               state.buttonStatus = false;
               //跳转到默认页
               router.push({ name: "Index" });

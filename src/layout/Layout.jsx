@@ -29,7 +29,6 @@ const Layout = defineComponent({
           "margin-left": variable.sidebarWidth,
         };
       }
-      console.log(mainContainerStyle.value);
       return (
         <div class={style.app_wrapper}>
           <n-layout has-sider style="height:100%">
