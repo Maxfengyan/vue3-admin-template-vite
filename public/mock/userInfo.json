@@ -3,20 +3,16 @@
   "dataMessage": "获取成功",
   "data": {
     "power": [
-      {
-        "template": [
-          { "template-create": ["template-create-add", "template-create-search"] },
-          { "template-audit": ["template-audit-sumit", "template-audit-refuse"] }
-        ]
-      },
-      {
-        "setting": [
-          { "setting-menu": ["setting-menu-search", "setting-menu-edit", "setting-menu-remove"] },
-          { "setting-role": ["setting-role-search", "setting-role-edit", "setting-role-remove"] }
-        ]
-      },
-      { "extra": ["extra"] },
-      { "vip": ["vip-manage"] },
+      "template",
+      "template-create",
+      "template-audit",
+      "portal",
+      "portal-create",
+      "setting",
+      "setting-menu",
+      "setting-role",
+      "extra",
+      "vip",
       "page"
     ],
     "name": "超级管理员",

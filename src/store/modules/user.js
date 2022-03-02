@@ -2,10 +2,10 @@ import { login, userInfo } from "@/api/user";
 import { setToken, getToken, getUserName, setUserName } from "@/core/auth";
 import filterAsyncRoutes from "@/core/addRoutePermission";
 const state = {
-  token: getToken() || "",
-  userName: getUserName() || "",
-  userPower: [],
-  routes: [],
+  token: getToken() || "", // 用户token
+  userName: getUserName() || "", // 用户名
+  userPower: [], // 用户权限
+  routes: [], // 用户动态路由表
 };
 
 const mutations = {
@@ -17,6 +17,9 @@ const mutations = {
   },
   SET_USERPOWER: (state, userPower) => {
     state.userPower = userPower;
+  },
+  SET_ROUTES: (state, routes) => {
+    state.routes = routes;
   },
 };
 
@@ -56,8 +59,8 @@ const actions = {
   },
 
   // 过滤权限
-  async GenerateRoutes(context, roles) {
-    const accessedRoutes = await filterAsyncRoutes(roles);
+  async GenerateRoutes(context, powers) {
+    const accessedRoutes = await filterAsyncRoutes(powers);
     context.commit("SET_ROUTES", accessedRoutes);
     return accessedRoutes;
   },

@@ -38,6 +38,7 @@ const constantRouters = [
   },
 ];
 
+// 动态路由
 export const asyncRoutes = [
   {
     path: "/template",

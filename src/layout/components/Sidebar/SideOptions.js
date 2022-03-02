@@ -1,6 +1,7 @@
 import { h } from "vue";
 import { RouterLink } from "vue-router";
 import { asyncRoutes } from "@/router/index";
+import { useStore } from "vuex";
 import svgIcon from "@/plugins/icons/svgIcon.jsx";
 const menuOptions = () => {
   const powerType = import.meta.env.VITE_POWER_TYPE;
@@ -9,6 +10,9 @@ const menuOptions = () => {
     // 静态路由权限呈现
     result = filterRouter(asyncRoutes);
   } else {
+    const { getters } = useStore();
+    console.log(getters.routes);
+    result = filterRouter(getters.routes);
   }
   return result;
 };

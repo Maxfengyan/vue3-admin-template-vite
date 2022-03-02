@@ -24,7 +24,6 @@ router.beforeEach(async (to, from, next) => {
         next();
       } else {
         // 已经登录但是可能强制刷新页面
-        debugger;
         let result;
         if (Array.isArray(userPower) && userPower.length > 0) {
           result = userPower;
