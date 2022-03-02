@@ -10,6 +10,7 @@ import Cookies from "js-cookie";
 
 const Token = "vue3-token";
 const Collapsed = "vue3-collapsed";
+const UserName = "vue3-username";
 
 export const getToken = () => {
   return Cookies.get(Token);
@@ -21,6 +22,14 @@ export const setToken = (token) => {
 
 export const removeToken = () => {
   Cookies.remove(Token);
+};
+
+export const getUserName = () => {
+  return Cookies.get(UserName);
+};
+
+export const setUserName = (username) => {
+  Cookies.set(UserName, username);
 };
 
 export const getCollapsed = () => {

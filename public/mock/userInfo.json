@@ -2,8 +2,24 @@
   "dataCode": "0000",
   "dataMessage": "获取成功",
   "data": {
-    "power": [{ "template": ["template-create", "template-audit"] }, { "buy": ["buy-list", "buy-unsubscribe"] }, { "vip": ["vip-manage"] }],
-    "name": "超级无敌管理员",
+    "power": [
+      {
+        "template": [
+          { "template-create": ["template-create-add", "template-create-search"] },
+          { "template-audit": ["template-audit-sumit", "template-audit-refuse"] }
+        ]
+      },
+      {
+        "setting": [
+          { "setting-menu": ["setting-menu-search", "setting-menu-edit", "setting-menu-remove"] },
+          { "setting-role": ["setting-role-search", "setting-role-edit", "setting-role-remove"] }
+        ]
+      },
+      { "extra": ["extra"] },
+      { "vip": ["vip-manage"] },
+      "page"
+    ],
+    "name": "超级管理员",
     "role": "admin",
     "createTime": "2022-02-18"
   }

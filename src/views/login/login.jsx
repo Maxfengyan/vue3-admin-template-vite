@@ -31,6 +31,8 @@ const Login = defineComponent({
             })
             .then((res) => {
               return store.dispatch("GetUserInfo", res);
+            })
+            .then((res) => {
               state.buttonStatus = false;
               //跳转到默认页
               router.push({ name: "Index" });

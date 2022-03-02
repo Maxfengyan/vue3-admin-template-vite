@@ -18,13 +18,19 @@ router.beforeEach(async (to, from, next) => {
   if (token) {
     // 动态权限
     if (powerType === "2") {
-      const { routes } = store.getters;
+      const { routes, userPower } = store.getters;
       // 权限正常
       if (Array.isArray(routes) && routes.length > 0) {
         next();
       } else {
         // 已经登录但是可能强制刷新页面
-        const result = await store.dispatch("GetUserInfo", token);
+        debugger;
+        let result;
+        if (Array.isArray(userPower) && userPower.length > 0) {
+          result = userPower;
+        } else {
+          result = await store.dispatch("GetUserInfo", token);
+        }
         if (Array.isArray(result) && result.length > 0) {
           // 与路由表比对过滤权限
           const routes = await store.dispatch("GenerateRoutes", result);
