@@ -6,6 +6,7 @@ import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import { svgBuilder } from "./src/plugin/icons/svgBuilder";
+import ElementPlus from "unplugin-element-plus/vite";
 
 const path = require("path");
 
@@ -21,6 +22,7 @@ export default defineConfig({
   },
   plugins: [
     vue(),
+    ElementPlus({}),
     AutoImport({
       resolvers: [ElementPlusResolver()],
     }),
