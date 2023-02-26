@@ -1,3 +1,4 @@
+import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 import {
   ElButton,
   ElForm,
@@ -9,7 +10,7 @@ import {
   ElScrollbar,
   ElMenu,
   ElMenuItem,
-  ElSubmenu,
+  ElSubMenu,
   ElBreadcrumb,
   ElBreadcrumbItem,
   ElDropdown,
@@ -18,6 +19,11 @@ import {
 } from "element-plus";
 
 const useElementUi = (app) => {
+  for (const [key, component] of Object.entries(
+    ElementPlusIconsVue,
+  )) {
+    app.component(key, component);
+  }
   app.component(ElButton.name, ElButton);
   app.component(ElForm.name, ElForm);
   app.component(ElFormItem.name, ElFormItem);
@@ -28,7 +34,7 @@ const useElementUi = (app) => {
   app.component(ElScrollbar.name, ElScrollbar);
   app.component(ElMenu.name, ElMenu);
   app.component(ElMenuItem.name, ElMenuItem);
-  app.component(ElSubmenu.name, ElSubmenu);
+  app.component(ElSubMenu.name, ElSubMenu);
   app.component(ElBreadcrumb.name, ElBreadcrumb);
   app.component(ElBreadcrumbItem.name, ElBreadcrumbItem);
   app.component(ElDropdown.name, ElDropdown);

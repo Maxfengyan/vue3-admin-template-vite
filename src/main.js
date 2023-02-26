@@ -7,8 +7,6 @@ import store from "./store"; // store
 
 import directive from "./directive/index"; // directive
 
-import "element-plus/lib/theme-chalk/index.css"; // element css
-
 import useElementUi from "./elementui"; // 按需引入element-ui
 
 import "./core/permission"; // 动态校验路由

@@ -4,7 +4,7 @@
       <div class="el-dropdown-link">
         <svg-icon name="user" class="acatar-icon" />
         <span>{{ userName }} </span>
-        <i class="el-icon-caret-bottom" />
+        <el-icon><CaretBottom /></el-icon>
       </div>
       <template #dropdown>
         <el-dropdown-menu>

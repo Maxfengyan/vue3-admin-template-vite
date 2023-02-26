@@ -7,7 +7,7 @@
     <transition name="fade">
       <div v-if="collapse">
         <svg-icon class="logo-account" :name="logo" />
-        <span>{{ system_name }}</span>
+        <b class="systemName">{{ system_name }}</b>
       </div>
       <div v-else>
         <svg-icon class="logo-account" :name="logo" />
@@ -39,6 +39,11 @@ export default defineComponent({
 </script>
 
 <style lang="stylus" scoped>
+.systemName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:nowrap;
+}
 .sidebar-logo-container {
   width: 100%;
   height: 50px;
@@ -52,10 +57,14 @@ export default defineComponent({
     align-items: center;
     height: 100%;
   }
-
-  & span {
-    font-weight: bold;
-    font-size: 17px;
+  & svg {
+    flex: 1;
+    width: 40px;
+  }
+  & b {
+    width: calc(100% - 50px);
+    display: block;
+    font-size: 18px;
   }
 }
 

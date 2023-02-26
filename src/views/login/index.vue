@@ -9,7 +9,7 @@
     >
       <h2 class="login-title">{{ systemName }}</h2>
       <el-form-item prop="account">
-        <i class="login-user el-icon-user-solid"></i>
+        <el-icon class="login-user"><User /></el-icon>
         <el-input
           v-model="userInfo.account"
           autocomplete="off"
@@ -17,7 +17,7 @@
         ></el-input>
       </el-form-item>
       <el-form-item prop="password">
-        <i class="login-user el-icon-lock"></i>
+        <el-icon class="login-user"><Lock /></el-icon>
         <el-input
           v-model="userInfo.password"
           @keyup.enter="login"
@@ -32,7 +32,11 @@
           @click="switchStatus"
         />
       </el-form-item>
-      <el-button @click="login" type="primary" :loading="loading"
+      <el-button
+        @click="login"
+        type="primary"
+        size="large"
+        :loading="loading"
         >登录</el-button
       >
       <div class="version">版本号：{{ version }}</div>
@@ -147,7 +151,7 @@ export default {
   border-radius: 5px;
 }
 
-#login-container input {
+#login-container input{
   background: transparent !important;
   outline: none;
   border: none;
@@ -155,7 +159,10 @@ export default {
   color: #fff;
   height: 100%;
 }
-
+.el-input__wrapper  {
+  background: transparent !important;
+  box-shadow: none;
+}
 #login-container .el-input {
   height: 47px;
 }
