@@ -58,8 +58,7 @@ npm run dev
 ```
 6. **mockJs**:因为本地开发时使用 **mockJs** 无法在浏览器捕捉到响应信息，故放弃，可采用以下两种方法：<br>
 
-   > (1) <a href="https://github.com/easy-mock/easy-mock">easy-mock</a>(推荐):服务
-器搭建 easy-mock 服务进行接口管理，前后端开发方便协作规范。<br>
+   > (1) <a href="https://github.com/easy-mock/easy-mock">easy-mock</a>(推荐):服务器搭建 easy-mock 服务进行接口管理，前后端开发方便协作规范。<br>
 
    > (2) public:vite 项目 public 文件夹下文件会自动变为静态资源服务，可以在 public 文件夹下根据接口规范创建相应路径的 json 文件达到 ajax 请求目的。
 
