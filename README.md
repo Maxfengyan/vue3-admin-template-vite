@@ -33,33 +33,38 @@ npm run dev
 1. **Vite**:使用 vite 构建工具，放弃 webpack。(vite 真香)
 2. **Axios 封装请求**：<br>
 
-   (1) 根据实际项目开发需求，系统中可能会请求多个不同的 **baseurl**，为方便处理封装 axios 类(自定义修改响应拦截在*src/core/request.js*)。<br>
+   > (1) 根据实际项目开发需求，系统中可能会请求多个不同的 **baseurl**，为方便处理封装 axios 类(自定义修改响应拦截在*src/core/request.js*)。<br>
 
-   (2) 为了项目打包后也可以灵活调整后端接口地址，在打包后自动切换为闭包形式读取 baseurl（_public/api.js_），方便项目打包后部署时随便修改接口地址。
+   > (2) 为了项目打包后也可以灵活调整后端接口地址，在打包后自动切换为闭包形式读取 baseurl（_public/api.js_），方便项目打包后部署时随便修改接口地址。
 
 3. **权限过滤拦截**：权限处理更加颗粒化/灵活化。<br>
 
-   (1) 在.env 配置文件中设置 VITE_POWER_TYPE 是否启用**动态权限**路由功能<br>
+   > (1) 在.env 配置文件中设置 VITE_POWER_TYPE 是否启用**动态权限**路由功能<br>
 
-   (2) 改变动态路由逻辑，原本通过角色来确定路由权限，现改为每个路由中添加各自的唯一的路由标识，通过接口获取用户的权限标识，进行颗粒化的比对分配权限，更加灵活一些。<br>
+   > (2) 改变动态路由逻辑，原本通过角色来确定路由权限，现改为每个路由中添加各自的唯一的路由标识，通过接口获取用户的权限标识，进行颗粒化的比对分配权限，更加灵活一些。<br>
 
-   (3) 权限数据并非统一结构，可以结合项目进行调整(修改逻辑在*src/core/addRoutePermission*)
+   > (3) 权限数据并非统一结构，可以结合项目进行调整(修改逻辑在*src/core/addRoutePermission*)
 
-4. **Sidebar**:剔除了侧边栏适配 mobile 的响应式(懒...)，调整代码逻辑，在.env 文件中设置 系统标题(VITE_SYSTEM_SWITCH/VITE_SYSTEM_NAME)/系统 logo(VITE_SYSTEM_LOGO)
-5. **svg**：下载 svg 文件存放于*src/plugin/icons/svg/*下，使用方式:
-
+4. **Sidebar**:剔除了侧边栏适配 mobile 的响应式(懒...)，调整代码逻辑，在.env 文件中设置。 
+```
+   VITE_SYSTEM_SWITCH: 是否展示系统标题和logo
+   VITE_SYSTEM_NAME: 系统标题
+   VITE_SYSTEM_LOGO: 系统 logo
+```
+5. **svg**：下载 svg 文件存放于*src/plugin/icons/svg/*下，使用方式如下
 ```html
 <!-- logo.svg -->
 <svg-icon name="logo" color="xxx" class="xxxx" />
 ```
+6. **mockJs**:因为本地开发时使用 **mockJs** 无法在浏览器捕捉到响应信息，故放弃，可采用以下两种方法：<br>
 
-&nbsp;&nbsp;&nbsp;&nbsp; 6.**mockJs**:因为本地开发时使用 **mockJs** 无法在浏览器捕捉到响应信息，故放弃，可采用以下两种方法：<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1) <a href="https://github.com/easy-mock/easy-mock">easy-mock</a>(推荐):服务
+   > (1) <a href="https://github.com/easy-mock/easy-mock">easy-mock</a>(推荐):服务
 器搭建 easy-mock 服务进行接口管理，前后端开发方便协作规范。<br>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2) public:vite 项目 public 文件夹下文件会自动变为静态资源服务，可以在 public 文件夹下根据接口规范创建相应路径的 json 文件达到 ajax 请求目的。
+   > (2) public:vite 项目 public 文件夹下文件会自动变为静态资源服务，可以在 public 文件夹下根据接口规范创建相应路径的 json 文件达到 ajax 请求目的。
 
-注：如果需要前后端联调接口需要在 vite.config.js 配置 proxy
+
+tips：**如果需要前后端联调接口需要在 vite.config.js 配置 proxy**
 
 #### 目录结构
 
@@ -108,5 +113,6 @@ npm run dev
 
 - 实现<a href="https://github.com/PanJiaChen/vue-element-admin"> vue-element-admin</a>中的组件功能
 - typescript 版本
+- 采用setup方式，进行精简代码
 
 #### 路过的同学不要走 😀，如果本项目对你有帮助，请给我~~一键三连~~ 一个 star⭐~
